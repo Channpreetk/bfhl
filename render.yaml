@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: bfhl-api
+    env: docker
+    region: oregon
+    plan: free
+    healthCheckPath: /api/health
+    
+    # Docker configuration
+    dockerfilePath: ./Dockerfile
+    
+    # Environment variables
+    envVars:
+      - key: PORT
+        value: 8080
+      - key: JAVA_OPTS
+        value: "-Xmx256m -Xms128m"
+    
+    # Auto-deploy on push to main branch
+    autoDeployOnPush: true
+    
+    # Build configuration
+    buildFilter:
+      paths:
+        - src/**
+        - pom.xml
+        - Dockerfile
