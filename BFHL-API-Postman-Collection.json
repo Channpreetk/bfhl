@@ -1,0 +1,309 @@
+{
+  "info": {
+    "name": "BFHL API",
+    "description": "Spring Boot 3 REST API for BFHL Data Processing",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Test 1 - Mixed Input",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"data\": [\"a\",\"1\",\"334\",\"4\",\"R\",\"$\"]\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/bfhl",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "bfhl"
+          ]
+        },
+        "description": "Test mixed input with numbers, alphabets, and special characters"
+      },
+      "response": []
+    },
+    {
+      "name": "Test 2 - Only Alphabets",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"data\": [\"A\",\"ABCD\",\"DOE\"]\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/bfhl",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "bfhl"
+          ]
+        },
+        "description": "Test alphabetic input only"
+      },
+      "response": []
+    },
+    {
+      "name": "Test 3 - Only Numbers",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"data\": [\"1\",\"2\",\"3\",\"4\",\"5\"]\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/bfhl",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "bfhl"
+          ]
+        },
+        "description": "Test numeric input only"
+      },
+      "response": []
+    },
+    {
+      "name": "Test 4 - Only Special Characters",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"data\": [\"!\",\"@\",\"#\",\"$\",\"%\"]\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/bfhl",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "bfhl"
+          ]
+        },
+        "description": "Test special characters handling"
+      },
+      "response": []
+    },
+    {
+      "name": "Test 5 - Lowercase Alphabets",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"data\": [\"abc\",\"def\",\"ghi\"]\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/bfhl",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "bfhl"
+          ]
+        },
+        "description": "Test lowercase alphabets conversion to uppercase"
+      },
+      "response": []
+    },
+    {
+      "name": "Test 6 - Large Numbers",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"data\": [\"1000\",\"2000\",\"3000\"]\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/bfhl",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "bfhl"
+          ]
+        },
+        "description": "Test large number handling"
+      },
+      "response": []
+    },
+    {
+      "name": "Test 7 - Error: Empty Array",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"data\": []\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/bfhl",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "bfhl"
+          ]
+        },
+        "description": "Test error handling for empty array"
+      },
+      "response": []
+    },
+    {
+      "name": "Test 8 - Error: Missing Data Field",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/bfhl",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "bfhl"
+          ]
+        },
+        "description": "Test validation error for missing data field"
+      },
+      "response": []
+    },
+    {
+      "name": "Test 9 - Single Element",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"data\": [\"X\"]\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/bfhl",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "bfhl"
+          ]
+        },
+        "description": "Test single element input"
+      },
+      "response": []
+    },
+    {
+      "name": "Test 10 - Complex Mixed Input",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"data\": [\"M\",\"1\",\"391\",\"z\",\"11\",\"$\",\"@\",\"1\"]\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/bfhl",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "bfhl"
+          ]
+        },
+        "description": "Test complex mixed input with various data types"
+      },
+      "response": []
+    }
+  ]
+}
