@@ -9,6 +9,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 /**
  * REST Controller for BFHL API endpoints
  */
@@ -26,6 +28,16 @@ public class BFHLController {
      */
     public BFHLController(BFHLService bfhlService) {
         this.bfhlService = bfhlService;
+    }
+
+    /**
+     * GET endpoint for health check
+     *
+     * @return health status
+     */
+    @GetMapping("/health")
+    public ResponseEntity<Map<String, String>> health() {
+        return ResponseEntity.ok(Map.of("status", "UP", "message", "BFHL API is running"));
     }
 
     /**
